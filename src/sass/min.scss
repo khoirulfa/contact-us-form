@@ -1,0 +1,49 @@
+@import "~bootstrap/scss/bootstrap";
+@import "sweetalert2/src/sweetalert2.scss";
+@import "font-awesome/scss/font-awesome.scss";
+
+$dark-color: #0a194a;
+$light-color: #f7edde;
+
+@mixin inputStyle {
+	background: $light-color;
+	border: 1px solid rgba(10, 25, 74, 0.349);
+}
+
+body {
+	background: url("/img/bg.png") no-repeat center;
+	user-select: none;
+
+	.container {
+      li{
+         list-style: none;
+         a:hover{
+            opacity: 50%;
+         }
+      }
+		.card {
+			background-color: $light-color;
+			form {
+				input:focus,
+				textarea:focus {
+					box-shadow: 0px 0px 1px 2px rgba(10, 25, 74, 0.349);
+				}
+				input {
+					@include inputStyle;
+				}
+				textarea {
+					@include inputStyle;
+					height: 100px;
+				}
+				.btn {
+					background-color: $dark-color;
+					border-color: $dark-color;
+					color: #fff;
+				}
+				.btn:focus {
+					box-shadow: 0px 0px 1px 1px $dark-color;
+				}
+			}
+		}
+	}
+}
