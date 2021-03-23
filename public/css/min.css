@@ -16274,7 +16274,7 @@ body.swal2-toast-column .swal2-toast .swal2-validation-message {
 }
 
 body {
-  background: url("/img/bg.png") no-repeat center;
+  background: url("/img/bg.png") center no-repeat;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -16285,12 +16285,21 @@ body .container li {
   list-style: none;
 }
 
+body .container li a {
+  text-decoration: none;
+  color: #efffe0;
+}
+
 body .container li a:hover {
   opacity: 50%;
 }
 
 body .container .card {
-  background-color: #f7edde;
+  background-color: #efffe0;
+}
+
+body .container .card form {
+  color: #112938;
 }
 
 body .container .card form input:focus,
@@ -16299,23 +16308,34 @@ body .container .card form textarea:focus {
 }
 
 body .container .card form input {
-  background: #f7edde;
-  border: 1px solid rgba(10, 25, 74, 0.349);
+  background: #efffe0;
+  border: 0px;
+  box-shadow: 0px 0px 5px #112938;
 }
 
 body .container .card form textarea {
-  background: #f7edde;
-  border: 1px solid rgba(10, 25, 74, 0.349);
-  height: 100px;
+  background: #efffe0;
+  border: 0px;
+  box-shadow: 0px 0px 5px #112938;
+  resize: none;
+  height: 180px;
+  overflow: scroll;
 }
 
 body .container .card form .btn {
-  background-color: #0a194a;
-  border-color: #0a194a;
+  background-color: #112938;
+  border-color: #112938;
+  border: 2px solid #112938;
   color: #fff;
 }
 
+body .container .card form .btn:hover {
+  background-color: #efffe0;
+  color: #112938;
+  border: 2px solid #112938;
+}
+
 body .container .card form .btn:focus {
-  box-shadow: 0px 0px 1px 1px #0a194a;
+  box-shadow: 0px 0px 1px 1px #112938;
 }
 

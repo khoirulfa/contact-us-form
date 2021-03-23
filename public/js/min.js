@@ -11764,27 +11764,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var submit = document.getElementById('submit-btn');
+var submitBtn = document.getElementById('submit-btn');
 var name = document.getElementById('name');
 var email = document.getElementById('email');
 var message = document.getElementById('message');
-submit.addEventListener('click', function (e) {
+var form = document.getElementById('form');
+submitBtn.addEventListener('click', function (e) {
   e.preventDefault();
-  sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1___default.a.fire({
-    title: 'Are you sure',
-    text: 'to send a email?',
-    icon: 'info',
-    showCancelButton: true,
-    confirmButtonText: 'Yes, send',
-    cancelButtonText: 'No, keep it'
-  }).then(function (result) {
-    if (result.value) {
-      name.value = '';
-      email.value = '';
-      message.value = '';
-      sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1___default.a.fire('OK', 'Your email has been sent', 'success');
-    }
-  });
+
+  if (name.value == '' || email.value == '' || message.value == '') {
+    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1___default.a.fire('Error', 'Please check the missing fields', 'error');
+  } else {
+    sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1___default.a.fire({
+      title: 'Are you sure',
+      text: 'To sent email?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, sent it!'
+    }).then(function (result) {
+      if (result.isConfirmed) {
+        sweetalert2_dist_sweetalert2_js__WEBPACK_IMPORTED_MODULE_1___default.a.fire('OK!', 'Your email has been received.', 'success');
+      }
+    });
+  }
 });
 
 /***/ }),
